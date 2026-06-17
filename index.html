@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ứng dụng luyện phát âm tiếng Anh - Nghe và luyện tập câu hỏi & câu trả lời theo từng Unit">
+    <title>🎧 English Speaking Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="English Practice">
+    <link rel="apple-touch-icon" href="icon-512.png">
+</head>
+<body>
+    <!-- Floating particles background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#grad1)" stroke-width="2.5"/>
+                        <path d="M10 16 L14 20 L22 12" stroke="url(#grad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>English Practice</h1>
+            </div>
+            <div class="header-controls">
+                <div class="voice-control">
+                    <label for="voiceSelect">🎙️ Giọng:</label>
+                    <select id="voiceSelect">
+                        <option value="">Đang tải...</option>
+                    </select>
+                </div>
+                <div class="speed-control">
+                    <label for="speechSpeed">Tốc độ:</label>
+                    <select id="speechSpeed">
+                        <option value="0.6">🐢 Rất chậm</option>
+                        <option value="0.8" selected>🐌 Chậm</option>
+                        <option value="1">🚶 Bình thường</option>
+                        <option value="1.2">🏃 Nhanh</option>
+                    </select>
+                </div>
+                <button class="btn-theme" id="themeToggle" title="Chuyển theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Luyện phát âm tiếng Anh</div>
+            <h2 class="hero-title">Nghe & Luyện Nói <span class="gradient-text">Tiếng Anh</span></h2>
+            <p class="hero-subtitle">Nhấn vào nút 🔊 để nghe phát âm từng câu hỏi và câu trả lời. Luyện tập mỗi ngày để cải thiện kỹ năng nói!</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalUnits">15</span>
+                    <span class="stat-label">Units</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="totalQA">45</span>
+                    <span class="stat-label">Câu hỏi</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Luyện tập</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="section-nav" id="sectionNav">
+        <div class="nav-container">
+            <button class="nav-tab active" data-section="phan1">📘 Phần 1 (Unit 6-10)</button>
+            <button class="nav-tab" data-section="phan2">📗 Phần 2 (Unit 1-10)</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Content will be dynamically generated -->
+    </main>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" title="Lên đầu trang">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Now Speaking Toast -->
+    <div class="speaking-toast" id="speakingToast">
+        <div class="speaking-wave">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span class="speaking-text">Đang phát âm...</span>
+        <button class="speaking-stop" id="stopSpeaking">✕</button>
+    </div>
+
+    <footer class="footer">
+        <p>Made with ❤️ for English learners • Sử dụng Web Speech API</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
