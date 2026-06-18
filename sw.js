@@ -1,5 +1,5 @@
 // Service Worker for English Practice PWA
-const CACHE_NAME = 'english-practice-v1';
+const CACHE_NAME = 'english-practice-v2';
 const ASSETS = [
     './',
     './index.html',
@@ -33,25 +33,23 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
-// Fetch: serve from cache first, fall back to network
+// Fetch: network-first, fallback to cache (ensures updates are always reflected)
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-                return cachedResponse;
-            }
-            return fetch(event.request).then((networkResponse) => {
-                // Cache Google Fonts and other external resources
-                if (event.request.url.includes('fonts.googleapis.com') ||
-                    event.request.url.includes('fonts.gstatic.com')) {
-                    const responseClone = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, responseClone);
-                    });
+        fetch(event.request).then((networkResponse) => {
+            // Update cache with fresh response
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+                cache.put(event.request, responseClone);
+            });
+            return networkResponse;
+        }).catch(() => {
+            // Network failed, try cache
+            return caches.match(event.request).then((cachedResponse) => {
+                if (cachedResponse) {
+                    return cachedResponse;
                 }
-                return networkResponse;
-            }).catch(() => {
-                // If both cache and network fail, return a basic offline message
+                // If both cache and network fail, return offline page
                 if (event.request.destination === 'document') {
                     return caches.match('./index.html');
                 }
