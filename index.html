@@ -113,6 +113,41 @@
         <button class="speaking-stop" id="stopSpeaking">✕</button>
     </div>
 
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✏️ Chỉnh sửa câu hỏi & trả lời</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="edit-field">
+                    <label for="editQ">📘 Câu hỏi (Tiếng Anh)</label>
+                    <textarea id="editQ" rows="3"></textarea>
+                </div>
+                <div class="edit-field">
+                    <label for="editQVi">📝 Câu hỏi (Tiếng Việt)</label>
+                    <textarea id="editQVi" rows="2"></textarea>
+                </div>
+                <div class="edit-field">
+                    <label for="editA">📗 Câu trả lời (Tiếng Anh)</label>
+                    <textarea id="editA" rows="4"></textarea>
+                </div>
+                <div class="edit-field">
+                    <label for="editAVi">📝 Câu trả lời (Tiếng Việt)</label>
+                    <textarea id="editAVi" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal btn-reset" id="editReset">🔄 Khôi phục gốc</button>
+                <div class="modal-footer-right">
+                    <button class="btn-modal btn-cancel" id="editCancel">Hủy</button>
+                    <button class="btn-modal btn-save" id="editSave">💾 Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>Made with ❤️ for English learners • Sử dụng Web Speech API</p>
     </footer>

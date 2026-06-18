@@ -9,6 +9,10 @@ let speakingBtnRef = null;
 let selectedVoice = null;
 let availableVoices = [];
 
+// ---- Edit State ----
+let editingItem = null; // { sectionKey, unitIndex, itemIndex }
+let customEdits = {}; // stored edits from localStorage
+
 // ---- DOM References ----
 const mainContent = document.getElementById('mainContent');
 const sectionNav = document.getElementById('sectionNav');
@@ -22,6 +26,7 @@ const particlesContainer = document.getElementById('particles');
 
 // ---- Initialize ----
 document.addEventListener('DOMContentLoaded', () => {
+    loadCustomEdits();
     initParticles();
     initTheme();
     initVoices();
@@ -29,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollTop();
     initStopSpeaking();
+    initEditModal();
     updateStats();
+    createSaveToast();
 });
 
 // ---- Particles ----
@@ -175,8 +182,13 @@ function createUnitCard(unit, unitIndex, sectionKey) {
 }
 
 function createQAItem(item, sectionKey, unitIndex, itemIndex) {
+    // Get the effective data (with custom edits applied)
+    const effectiveItem = getEffectiveItem(sectionKey, unitIndex, itemIndex);
+    const isEdited = hasCustomEdit(sectionKey, unitIndex, itemIndex);
+
     const qaItem = document.createElement('div');
-    qaItem.className = 'qa-item';
+    qaItem.className = 'qa-item' + (isEdited ? ' edited' : '');
+    qaItem.id = `qa-${sectionKey}-${unitIndex}-${itemIndex}`;
 
     // Question
     const questionBlock = document.createElement('div');
@@ -184,8 +196,8 @@ function createQAItem(item, sectionKey, unitIndex, itemIndex) {
     questionBlock.innerHTML = `
         <span class="qa-label q-label">Q</span>
         <div class="qa-content">
-            <p class="qa-english">${item.q}</p>
-            <p class="qa-vietnamese">${item.qVi}</p>
+            <p class="qa-english">${effectiveItem.q}</p>
+            <p class="qa-vietnamese">${effectiveItem.qVi}</p>
         </div>
     `;
 
@@ -196,9 +208,21 @@ function createQAItem(item, sectionKey, unitIndex, itemIndex) {
     qSpeakBtn.title = 'Nghe phát âm câu hỏi';
     qSpeakBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        speak(item.q, qSpeakBtn);
+        speak(effectiveItem.q, qSpeakBtn);
     });
     questionBlock.appendChild(qSpeakBtn);
+
+    // Edit button for question row
+    const editBtn = document.createElement('button');
+    editBtn.className = 'btn-edit';
+    editBtn.id = `edit-${sectionKey}-${unitIndex}-${itemIndex}`;
+    editBtn.innerHTML = '✏️';
+    editBtn.title = 'Chỉnh sửa';
+    editBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openEditModal(sectionKey, unitIndex, itemIndex);
+    });
+    questionBlock.appendChild(editBtn);
 
     // Answer
     const answerBlock = document.createElement('div');
@@ -206,8 +230,8 @@ function createQAItem(item, sectionKey, unitIndex, itemIndex) {
     answerBlock.innerHTML = `
         <span class="qa-label a-label">A</span>
         <div class="qa-content">
-            <p class="qa-english">${item.a}</p>
-            <p class="qa-vietnamese">${item.aVi}</p>
+            <p class="qa-english">${effectiveItem.a}</p>
+            <p class="qa-vietnamese">${effectiveItem.aVi}</p>
         </div>
     `;
 
@@ -218,7 +242,7 @@ function createQAItem(item, sectionKey, unitIndex, itemIndex) {
     aSpeakBtn.title = 'Nghe phát âm câu trả lời';
     aSpeakBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        speak(item.a, aSpeakBtn);
+        speak(effectiveItem.a, aSpeakBtn);
     });
     answerBlock.appendChild(aSpeakBtn);
 
@@ -408,12 +432,13 @@ function playAllInUnit(unit, sectionKey, unitIndex) {
 
     const allTexts = [];
     unit.items.forEach((item, itemIndex) => {
+        const effectiveItem = getEffectiveItem(sectionKey, unitIndex, itemIndex);
         allTexts.push({
-            text: item.q,
+            text: effectiveItem.q,
             btnId: `speak-q-${sectionKey}-${unitIndex}-${itemIndex}`
         });
         allTexts.push({
-            text: item.a,
+            text: effectiveItem.a,
             btnId: `speak-a-${sectionKey}-${unitIndex}-${itemIndex}`
         });
     });
@@ -484,4 +509,148 @@ function initScrollTop() {
     });
 }
 
-// Voice loading is now handled by initVoices()
+// ---- Custom Edits (localStorage) ----
+const EDITS_STORAGE_KEY = 'ep-custom-edits';
+
+function loadCustomEdits() {
+    try {
+        const saved = localStorage.getItem(EDITS_STORAGE_KEY);
+        customEdits = saved ? JSON.parse(saved) : {};
+    } catch (e) {
+        customEdits = {};
+    }
+}
+
+function saveCustomEdits() {
+    localStorage.setItem(EDITS_STORAGE_KEY, JSON.stringify(customEdits));
+}
+
+function getEditKey(sectionKey, unitIndex, itemIndex) {
+    return `${sectionKey}_${unitIndex}_${itemIndex}`;
+}
+
+function hasCustomEdit(sectionKey, unitIndex, itemIndex) {
+    return !!customEdits[getEditKey(sectionKey, unitIndex, itemIndex)];
+}
+
+function getEffectiveItem(sectionKey, unitIndex, itemIndex) {
+    const original = englishData[sectionKey].units[unitIndex].items[itemIndex];
+    const key = getEditKey(sectionKey, unitIndex, itemIndex);
+    const edit = customEdits[key];
+    if (edit) {
+        return {
+            q: edit.q ?? original.q,
+            qVi: edit.qVi ?? original.qVi,
+            a: edit.a ?? original.a,
+            aVi: edit.aVi ?? original.aVi
+        };
+    }
+    return original;
+}
+
+// ---- Edit Modal ----
+function initEditModal() {
+    const modal = document.getElementById('editModal');
+    const closeBtn = document.getElementById('modalClose');
+    const cancelBtn = document.getElementById('editCancel');
+    const saveBtn = document.getElementById('editSave');
+    const resetBtn = document.getElementById('editReset');
+
+    closeBtn.addEventListener('click', closeEditModal);
+    cancelBtn.addEventListener('click', closeEditModal);
+
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeEditModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('visible')) {
+            closeEditModal();
+        }
+    });
+
+    saveBtn.addEventListener('click', () => {
+        if (!editingItem) return;
+
+        const { sectionKey, unitIndex, itemIndex } = editingItem;
+        const key = getEditKey(sectionKey, unitIndex, itemIndex);
+
+        customEdits[key] = {
+            q: document.getElementById('editQ').value.trim(),
+            qVi: document.getElementById('editQVi').value.trim(),
+            a: document.getElementById('editA').value.trim(),
+            aVi: document.getElementById('editAVi').value.trim()
+        };
+
+        saveCustomEdits();
+        closeEditModal();
+        // Re-render to reflect changes
+        renderSection(currentSection);
+        showSaveToast('✅ Đã lưu thay đổi!');
+    });
+
+    resetBtn.addEventListener('click', () => {
+        if (!editingItem) return;
+
+        const { sectionKey, unitIndex, itemIndex } = editingItem;
+        const key = getEditKey(sectionKey, unitIndex, itemIndex);
+        const original = englishData[sectionKey].units[unitIndex].items[itemIndex];
+
+        // Remove custom edit
+        delete customEdits[key];
+        saveCustomEdits();
+
+        // Fill modal with original values
+        document.getElementById('editQ').value = original.q;
+        document.getElementById('editQVi').value = original.qVi;
+        document.getElementById('editA').value = original.a;
+        document.getElementById('editAVi').value = original.aVi;
+
+        closeEditModal();
+        renderSection(currentSection);
+        showSaveToast('🔄 Đã khôi phục về bản gốc!');
+    });
+}
+
+function openEditModal(sectionKey, unitIndex, itemIndex) {
+    editingItem = { sectionKey, unitIndex, itemIndex };
+    const effectiveItem = getEffectiveItem(sectionKey, unitIndex, itemIndex);
+
+    document.getElementById('editQ').value = effectiveItem.q;
+    document.getElementById('editQVi').value = effectiveItem.qVi;
+    document.getElementById('editA').value = effectiveItem.a;
+    document.getElementById('editAVi').value = effectiveItem.aVi;
+
+    const modal = document.getElementById('editModal');
+    modal.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+
+    // Focus on the first textarea
+    setTimeout(() => document.getElementById('editQ').focus(), 100);
+}
+
+function closeEditModal() {
+    const modal = document.getElementById('editModal');
+    modal.classList.remove('visible');
+    document.body.style.overflow = '';
+    editingItem = null;
+}
+
+// ---- Save Toast ----
+function createSaveToast() {
+    const toast = document.createElement('div');
+    toast.className = 'save-toast';
+    toast.id = 'saveToast';
+    document.body.appendChild(toast);
+}
+
+function showSaveToast(message) {
+    const toast = document.getElementById('saveToast');
+    toast.textContent = message;
+    toast.classList.add('visible');
+    setTimeout(() => {
+        toast.classList.remove('visible');
+    }, 2200);
+}
