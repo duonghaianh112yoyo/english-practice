@@ -1,5 +1,5 @@
 // Service Worker for English Practice PWA
-const CACHE_NAME = 'english-practice-v2';
+const CACHE_NAME = 'english-practice-v3';
 const ASSETS = [
     './',
     './index.html',

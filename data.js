@@ -431,5 +431,517 @@ const englishData = {
                 ]
             }
         ]
+    },
+    phan3: {
+        title: "PHẦN 3: TRẢ LỜI CÂU HỎI (RESPOND TO QUESTIONS)",
+        units: [
+            {
+                name: "Chủ đề 1",
+                topic: "Travel",
+                topicVi: "Đi lại",
+                icon: "✈️",
+                color: "#0ea5e9",
+                items: [
+                    {
+                        q: "How do you travel to school/work?",
+                        qVi: "Bạn đi đến trường/đi làm bằng gì?",
+                        a: "I usually use a motorbike because it's fast and convenient. It takes twenty minutes, but I take a bus when it rains heavily.",
+                        aVi: "Tôi thường đi xe máy vì nó nhanh và tiện lợi. Mất khoảng hai mươi phút, nhưng tôi đi xe buýt khi trời mưa to."
+                    },
+                    {
+                        q: "Do you prefer train or plane when traveling long distances? Why?",
+                        qVi: "Bạn thích đi tàu hay máy bay khi đi đường dài? Tại sao?",
+                        a: "I prefer the plane because it saves time for relaxing. However, the train is more comfortable and scenic.",
+                        aVi: "Tôi thích đi máy bay hơn vì nó tiết kiệm thời gian để nghỉ ngơi. Tuy nhiên, đi tàu thì thoải mái hơn và ngắm được cảnh."
+                    },
+                    {
+                        q: "Which country or city would you like to visit the most?",
+                        qVi: "Bạn muốn đến thăm quốc gia hoặc thành phố nào nhất?",
+                        a: "I'd love to visit Japan for its culture, food, and cherry blossoms. I also want to ride their high-speed trains.",
+                        aVi: "Tôi rất muốn đến Nhật Bản vì văn hóa, đồ ăn và hoa anh đào. Tôi cũng muốn đi tàu cao tốc ở đó."
+                    },
+                    {
+                        q: "What is the most beautiful place you have ever been to?",
+                        qVi: "Nơi đẹp nhất bạn từng đến là ở đâu?",
+                        a: "It's Ha Long Bay. The limestone mountains are absolutely amazing. I took many photos and want to go back.",
+                        aVi: "Đó là Vịnh Hạ Long. Các núi đá vôi trông tuyệt đẹp. Tôi đã chụp rất nhiều ảnh và muốn quay lại."
+                    },
+                    {
+                        q: "Would you like to travel abroad in the future? Where?",
+                        qVi: "Bạn có muốn đi du lịch nước ngoài trong tương lai không? Ở đâu?",
+                        a: "Yes, I want to visit European countries like France and Italy. I'm fascinated by their history, architecture, and cuisine.",
+                        aVi: "Có, tôi muốn đến các nước châu Âu như Pháp và Ý. Tôi bị thu hút bởi lịch sử, kiến trúc và ẩm thực của họ."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 2",
+                topic: "News",
+                topicVi: "Tin tức",
+                icon: "📰",
+                color: "#f59e0b",
+                items: [
+                    {
+                        q: "How often do you read newspapers?",
+                        qVi: "Bạn có thường đọc báo không?",
+                        a: "I read news almost every day on my phone during breakfast. It keeps me updated.",
+                        aVi: "Tôi đọc tin tức gần như mỗi ngày trên điện thoại lúc ăn sáng. Nó giúp tôi cập nhật thông tin."
+                    },
+                    {
+                        q: "What is your favorite way of updating news?",
+                        qVi: "Cách cập nhật tin tức yêu thích của bạn là gì?",
+                        a: "Through social media and online apps. They are quick, accessible anywhere, and I can choose topics.",
+                        aVi: "Qua mạng xã hội và ứng dụng trực tuyến. Chúng rất nhanh, tiện lợi mọi lúc mọi nơi và tôi có thể chọn chủ đề."
+                    },
+                    {
+                        q: "What kind of news are you interested in?",
+                        qVi: "Bạn quan tâm đến loại tin tức nào?",
+                        a: "I love technology and entertainment news, like new gadgets and films. I also follow sports as a football fan.",
+                        aVi: "Tôi thích tin công nghệ và giải trí, như thiết bị mới và phim ảnh. Tôi cũng theo dõi tin thể thao vì tôi mê bóng đá."
+                    },
+                    {
+                        q: "Do you think that news on the Internet is unreliable?",
+                        qVi: "Bạn có nghĩ rằng tin tức trên Internet không đáng tin không?",
+                        a: "Yes, some is unreliable because of fake news. I always check trusted websites first.",
+                        aVi: "Có, một số tin không đáng tin vì có nhiều tin giả. Tôi luôn kiểm tra các trang web uy tín trước."
+                    },
+                    {
+                        q: "Do you usually share news with your friends or family?",
+                        qVi: "Bạn có thường chia sẻ tin tức với bạn bè hoặc gia đình không?",
+                        a: "Yes, I often send useful news via Messenger or Zalo. It's fun to discuss it together.",
+                        aVi: "Có, tôi thường gửi các tin hữu ích qua Messenger hoặc Zalo. Cùng nhau thảo luận rất vui."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 3",
+                topic: "Time",
+                topicVi: "Thời gian",
+                icon: "⏰",
+                color: "#8b5cf6",
+                items: [
+                    {
+                        q: "Do you have a watch? If not, do you wish to have one?",
+                        qVi: "Bạn có đồng hồ không? Nếu không, bạn có muốn có một chiếc không?",
+                        a: "Yes, a birthday gift from my parents. It helps me manage time and looks stylish.",
+                        aVi: "Có, đó là quà sinh nhật từ bố mẹ. Nó giúp tôi quản lý thời gian và trông rất phong cách."
+                    },
+                    {
+                        q: "What is your favorite time of the day?",
+                        qVi: "Thời điểm yêu thích trong ngày của bạn là gì?",
+                        a: "The early evening. I can relax with my family after work, and the weather is cooler.",
+                        aVi: "Là lúc đầu buổi tối. Tôi có thể thư giãn với gia đình sau giờ làm, và thời tiết cũng mát mẻ hơn."
+                    },
+                    {
+                        q: "Are you usually on time or often late?",
+                        qVi: "Bạn thường đúng giờ hay hay trễ?",
+                        a: "I'm usually on time because being punctual shows respect. I always set an alarm.",
+                        aVi: "Tôi thường đúng giờ vì sự đúng giờ thể hiện sự tôn trọng. Tôi luôn đặt báo thức."
+                    },
+                    {
+                        q: "How do you manage your time during a busy day?",
+                        qVi: "Bạn quản lý thời gian như thế nào trong một ngày bận rộn?",
+                        a: "I make a to-do list every morning. I finish important tasks first to stay organized and reduce stress.",
+                        aVi: "Tôi làm danh sách việc cần làm mỗi sáng. Tôi hoàn thành các việc quan trọng trước để giữ mọi thứ có tổ chức và giảm căng thẳng."
+                    },
+                    {
+                        q: "Do you think people today are busier than in the past?",
+                        qVi: "Bạn có nghĩ mọi người ngày nay bận rộn hơn trước đây không?",
+                        a: "Yes, much busier with work, study, and family. Also, technology makes us respond immediately.",
+                        aVi: "Có, bận rộn hơn nhiều với công việc, học tập và gia đình. Ngoài ra, công nghệ khiến chúng ta luôn phải phản hồi ngay lập tức."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 4",
+                topic: "Health",
+                topicVi: "Sức khỏe",
+                icon: "🏥",
+                color: "#22c55e",
+                items: [
+                    {
+                        q: "How often do you have a health check?",
+                        qVi: "Bạn có thường kiểm tra sức khỏe không?",
+                        a: "Once a year through my company. It's important to detect problems early.",
+                        aVi: "Một năm một lần thông qua công ty. Điều quan trọng là để phát hiện sớm các vấn đề."
+                    },
+                    {
+                        q: "How do you keep fit?",
+                        qVi: "Bạn giữ sức khỏe như thế nào?",
+                        a: "By exercising regularly (jogging 3 times/week) and eating a balanced diet. I drink enough water and avoid fast food.",
+                        aVi: "Bằng cách tập thể dục thường xuyên (chạy bộ 3 lần/tuần) và ăn uống cân bằng. Tôi uống đủ nước và tránh thức ăn nhanh."
+                    },
+                    {
+                        q: "What do you usually do if you catch a cold?",
+                        qVi: "Bạn thường làm gì khi bị cảm lạnh?",
+                        a: "I drink warm water, rest at home, and eat fruits with vitamin C. I'll see a doctor if it gets worse.",
+                        aVi: "Tôi uống nước ấm, nghỉ ngơi ở nhà và ăn trái cây có vitamin C. Tôi sẽ đi khám bác sĩ nếu bệnh nặng hơn."
+                    },
+                    {
+                        q: "Do you do any exercise regularly?",
+                        qVi: "Bạn có tập thể dục thường xuyên không?",
+                        a: "Yes, about four times a week. I enjoy yoga and walking, which keeps me healthy and less stressed.",
+                        aVi: "Có, khoảng 4 lần một tuần. Tôi thích tập yoga và đi dạo, điều này giúp tôi khỏe mạnh và bớt căng thẳng."
+                    },
+                    {
+                        q: "What do you do to relax when you feel stressed?",
+                        qVi: "Bạn làm gì để thư giãn khi cảm thấy căng thẳng?",
+                        a: "I listen to music, take deep breaths, or go for a short walk. Talking to a close friend also helps.",
+                        aVi: "Tôi nghe nhạc, hít thở sâu, hoặc đi dạo một lát. Trò chuyện với bạn thân cũng rất có ích."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 5",
+                topic: "Energy",
+                topicVi: "Năng lượng",
+                icon: "🔋",
+                color: "#f97316",
+                items: [
+                    {
+                        q: "Which sources of energy do you know?",
+                        qVi: "Bạn biết những nguồn năng lượng nào?",
+                        a: "Coal, oil, natural gas, and renewable sources like solar, wind, and water. Clean sources are very popular now.",
+                        aVi: "Than, dầu mỏ, khí đốt tự nhiên và các nguồn năng lượng tái tạo như mặt trời, gió, nước. Năng lượng sạch hiện đang rất phổ biến."
+                    },
+                    {
+                        q: "Which one is the best for the environment?",
+                        qVi: "Nguồn năng lượng nào tốt nhất cho môi trường?",
+                        a: "Solar energy is the best. It's clean, produces no harmful gases, and Vietnam has a lot of sunshine.",
+                        aVi: "Năng lượng mặt trời là tốt nhất. Nó sạch, không tạo khí độc và Việt Nam có rất nhiều nắng."
+                    },
+                    {
+                        q: "What do you do to save energy in your daily life?",
+                        qVi: "Bạn làm gì để tiết kiệm năng lượng trong cuộc sống hàng ngày?",
+                        a: "I turn off lights and fans, use natural light, and unplug devices when fully charged.",
+                        aVi: "Tôi tắt đèn và quạt, sử dụng ánh sáng tự nhiên và rút phích cắm thiết bị khi đã sạc đầy."
+                    },
+                    {
+                        q: "Do you think people waste too much energy?",
+                        qVi: "Bạn có nghĩ mọi người lãng phí quá nhiều năng lượng không?",
+                        a: "Yes, many people leave the AC on all day or forget to turn off appliances. We must protect the environment.",
+                        aVi: "Có, nhiều người bật điều hòa cả ngày hoặc quên tắt các thiết bị. Chúng ta phải bảo vệ môi trường."
+                    },
+                    {
+                        q: "Why is saving energy important for the future?",
+                        qVi: "Tại sao tiết kiệm năng lượng lại quan trọng cho tương lai?",
+                        a: "Because natural resources are limited and will run out. It also helps reduce pollution.",
+                        aVi: "Vì tài nguyên thiên nhiên có hạn và sẽ cạn kiệt. Nó cũng giúp giảm thiểu ô nhiễm."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 6",
+                topic: "Language Learning",
+                topicVi: "Học ngôn ngữ",
+                icon: "📚",
+                color: "#6366f1",
+                items: [
+                    {
+                        q: "Do you like learning English?",
+                        qVi: "Bạn có thích học tiếng Anh không?",
+                        a: "Yes, it opens up opportunities in study and work. I love watching English movies to improve my skills.",
+                        aVi: "Có, nó mở ra nhiều cơ hội học tập và làm việc. Tôi thích xem phim tiếng Anh để cải thiện kỹ năng."
+                    },
+                    {
+                        q: "What do you often do to improve your English skills?",
+                        qVi: "Bạn thường làm gì để cải thiện kỹ năng tiếng Anh?",
+                        a: "I practice daily by watching videos, listening to podcasts, talking with friends, and learning new words.",
+                        aVi: "Tôi luyện tập mỗi ngày bằng cách xem video, nghe podcast, trò chuyện với bạn bè và học từ mới."
+                    },
+                    {
+                        q: "What are the benefits of learning another language?",
+                        qVi: "Lợi ích của việc học ngôn ngữ khác là gì?",
+                        a: "It helps you communicate, understand different cultures, and creates better job opportunities.",
+                        aVi: "Nó giúp bạn giao tiếp, hiểu các nền văn hóa khác nhau và tạo ra cơ hội việc làm tốt hơn."
+                    },
+                    {
+                        q: "What is the most difficult part of learning English for you?",
+                        qVi: "Phần khó nhất khi học tiếng Anh đối với bạn là gì?",
+                        a: "Speaking fluently. I feel nervous talking to foreigners, so I'm practicing to be more confident.",
+                        aVi: "Nói trôi chảy. Tôi cảm thấy lo lắng khi nói chuyện với người nước ngoài, nên tôi đang tập luyện để tự tin hơn."
+                    },
+                    {
+                        q: "How do you think English will help you in your future career?",
+                        qVi: "Bạn nghĩ tiếng Anh sẽ giúp gì cho sự nghiệp tương lai của bạn?",
+                        a: "It's very useful to work with international partners. Strong skills mean a better job and higher salary.",
+                        aVi: "Nó rất hữu ích để làm việc với các đối tác quốc tế. Kỹ năng tốt đồng nghĩa với công việc tốt hơn và lương cao hơn."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 7",
+                topic: "Cinema & Theatre",
+                topicVi: "Điện ảnh và nhà hát",
+                icon: "🎬",
+                color: "#ec4899",
+                items: [
+                    {
+                        q: "How often do you go to the cinema or theatre?",
+                        qVi: "Bạn thường đi rạp chiếu phim hoặc nhà hát bao lâu một lần?",
+                        a: "About once or twice a month on weekends with friends. It's a great way to relax.",
+                        aVi: "Khoảng một hoặc hai lần một tháng vào cuối tuần cùng bạn bè. Đây là một cách tuyệt vời để thư giãn."
+                    },
+                    {
+                        q: "What is the best movie you have ever seen?",
+                        qVi: "Bộ phim hay nhất bạn từng xem là gì?",
+                        a: '"Titanic". The story is touching and the acting is excellent. I can watch it again and again.',
+                        aVi: '"Titanic". Câu chuyện rất cảm động và diễn xuất tuyệt vời. Tôi có thể xem đi xem lại.'
+                    },
+                    {
+                        q: "What kind of movies do you enjoy the most?",
+                        qVi: "Bạn thích thể loại phim nào nhất?",
+                        a: "Comedy and action movies. Comedies make me laugh, while action films are exciting.",
+                        aVi: "Phim hài và phim hành động. Phim hài làm tôi cười, còn phim hành động thì rất kịch tính."
+                    },
+                    {
+                        q: "Do you prefer watching movies at home or at the cinema? Why?",
+                        qVi: "Bạn thích xem phim ở nhà hay ở rạp hơn? Tại sao?",
+                        a: "At the cinema for the big screen and powerful sound. But watching at home is cheaper and more comfortable.",
+                        aVi: "Tại rạp chiếu phim vì màn hình lớn và âm thanh sống động. Nhưng xem ở nhà thì rẻ và thoải mái hơn."
+                    },
+                    {
+                        q: "Who is your favourite actor or actress?",
+                        qVi: "Diễn viên yêu thích của bạn là ai?",
+                        a: "Leonardo DiCaprio. He is very talented, plays many roles, and I admire his acting.",
+                        aVi: "Leonardo DiCaprio. Anh ấy rất tài năng, đóng được nhiều vai và tôi rất ngưỡng mộ diễn xuất của anh."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 8",
+                topic: "Hobbies",
+                topicVi: "Sở thích",
+                icon: "🎯",
+                color: "#14b8a6",
+                items: [
+                    {
+                        q: "What do you like doing in your free time?",
+                        qVi: "Bạn thích làm gì trong thời gian rảnh?",
+                        a: "I like reading books, listening to music, and hanging out with friends. It helps me relax.",
+                        aVi: "Tôi thích đọc sách, nghe nhạc và đi chơi cùng bạn bè. Nó giúp tôi thư giãn."
+                    },
+                    {
+                        q: "Do you prefer indoor or outdoor activities?",
+                        qVi: "Bạn thích hoạt động trong nhà hay ngoài trời hơn?",
+                        a: "Outdoor activities like cycling or badminton. I love nature and it makes me feel healthier.",
+                        aVi: "Các hoạt động ngoài trời như đạp xe hoặc chơi cầu lông. Tôi yêu thiên nhiên và nó giúp tôi cảm thấy khỏe mạnh hơn."
+                    },
+                    {
+                        q: "Do you think that everyone should have a hobby? Why/why not?",
+                        qVi: "Bạn có nghĩ mọi người nên có một sở thích không? Tại sao?",
+                        a: "Yes, it helps reduce stress, make new friends, and develop useful skills.",
+                        aVi: "Có, nó giúp giảm căng thẳng, kết bạn mới và phát triển các kỹ năng hữu ích."
+                    },
+                    {
+                        q: "Would you like to turn your hobby into a job?",
+                        qVi: "Bạn có muốn biến sở thích thành công việc không?",
+                        a: "Yes, working as a photographer would be a dream. Doing what you love is wonderful.",
+                        aVi: "Có, làm nhiếp ảnh gia sẽ là một giấc mơ. Được làm những gì mình yêu thích thật tuyệt vời."
+                    },
+                    {
+                        q: "Do you think hobbies help reduce stress?",
+                        qVi: "Bạn có nghĩ sở thích giúp giảm căng thẳng không?",
+                        a: "Yes, when I enjoy something, I forget my problems and feel happy and refreshed.",
+                        aVi: "Có, khi làm điều mình thích, tôi quên đi các vấn đề và cảm thấy vui vẻ, sảng khoái."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 9",
+                topic: "Music",
+                topicVi: "Âm nhạc",
+                icon: "🎵",
+                color: "#d946ef",
+                items: [
+                    {
+                        q: "Do you like music?",
+                        qVi: "Bạn có thích âm nhạc không?",
+                        a: "Yes, I listen to it daily when I study or relax. It makes me feel happy and motivated.",
+                        aVi: "Có, tôi nghe nhạc mỗi ngày khi học hoặc thư giãn. Nó giúp tôi vui vẻ và có động lực."
+                    },
+                    {
+                        q: "What kind of music do you enjoy the most?",
+                        qVi: "Bạn thích thể loại nhạc nào nhất?",
+                        a: "Pop and ballad. The melodies are catchy, the lyrics are meaningful, and it's great for relaxing.",
+                        aVi: "Nhạc Pop và Ballad. Giai điệu bắt tai, lời bài hát ý nghĩa và rất tuyệt để thư giãn."
+                    },
+                    {
+                        q: "Do you play any musical instruments?",
+                        qVi: "Bạn có chơi nhạc cụ nào không?",
+                        a: "I can play the guitar a little (self-taught online). I wish I could play the piano too.",
+                        aVi: "Tôi có thể chơi guitar một chút (tự học trên mạng). Tôi ước mình cũng biết chơi piano."
+                    },
+                    {
+                        q: "When do you usually listen to music?",
+                        qVi: "Bạn thường nghe nhạc khi nào?",
+                        a: "While studying, doing housework, or commuting. It makes boring tasks more enjoyable.",
+                        aVi: "Khi học, làm việc nhà, hoặc trên đường đi. Nó khiến các công việc nhàm chán trở nên thú vị hơn."
+                    },
+                    {
+                        q: "Do you think music can affect people's mood?",
+                        qVi: "Bạn có nghĩ âm nhạc có thể ảnh hưởng đến tâm trạng con người không?",
+                        a: "Yes, happy songs make me cheerful, while gentle music helps calm me down when I'm sad.",
+                        aVi: "Có, những bài hát vui tươi khiến tôi vui vẻ, trong khi nhạc nhẹ nhàng giúp tôi bình tĩnh lại khi buồn."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 10",
+                topic: "Celebrations",
+                topicVi: "Lễ kỷ niệm",
+                icon: "🎊",
+                color: "#ef4444",
+                items: [
+                    {
+                        q: "When was your last birthday?",
+                        qVi: "Sinh nhật gần nhất của bạn là khi nào?",
+                        a: "About three months ago, I turned twenty. It was special because my close friends came.",
+                        aVi: "Khoảng ba tháng trước, tôi tròn 20 tuổi. Thật đặc biệt vì các bạn thân đều đến."
+                    },
+                    {
+                        q: "What did you do on your last birthday?",
+                        qVi: "Bạn đã làm gì trong sinh nhật gần nhất?",
+                        a: "I had a small home party. We had a delicious meal, ate chocolate cake, and took photos.",
+                        aVi: "Tôi tổ chức một bữa tiệc nhỏ ở nhà. Chúng tôi có một bữa ăn ngon, ăn bánh sô cô la và chụp ảnh."
+                    },
+                    {
+                        q: "What is your favorite celebration or festival in a year?",
+                        qVi: "Lễ hội hoặc dịp kỷ niệm yêu thích trong năm của bạn là gì?",
+                        a: "It's Tet (Lunar New Year). The family gathers, we enjoy traditional food and receive lucky money.",
+                        aVi: "Đó là dịp Tết Nguyên đán. Gia đình quây quần, thưởng thức món ăn truyền thống và nhận lì xì."
+                    },
+                    {
+                        q: "How do you usually celebrate Tet with your family?",
+                        qVi: "Bạn thường đón Tết với gia đình như thế nào?",
+                        a: "We clean and decorate the house, visit relatives, and make banh chung together.",
+                        aVi: "Chúng tôi dọn dẹp và trang trí nhà cửa, thăm họ hàng và cùng nhau gói bánh chưng."
+                    },
+                    {
+                        q: "Do you prefer big parties or small gatherings?",
+                        qVi: "Bạn thích tiệc lớn hay buổi tụ họp nhỏ hơn?",
+                        a: "Small gatherings. They feel warmer and more comfortable, while big parties are too noisy.",
+                        aVi: "Các buổi tụ họp nhỏ. Cảm giác ấm áp và thoải mái hơn, trong khi tiệc lớn thì quá ồn ào."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 11",
+                topic: "Weather",
+                topicVi: "Thời tiết",
+                icon: "🌦️",
+                color: "#06b6d4",
+                items: [
+                    {
+                        q: "What kind of weather do you like?",
+                        qVi: "Bạn thích loại thời tiết nào?",
+                        a: "I like cool and sunny weather for outdoor activities. Hot weather makes me tired.",
+                        aVi: "Tôi thích thời tiết mát mẻ và có nắng để hoạt động ngoài trời. Trời nóng làm tôi mệt."
+                    },
+                    {
+                        q: "What do you often do when the weather is bad?",
+                        qVi: "Bạn thường làm gì khi thời tiết xấu?",
+                        a: "I stay at home, read books, watch movies, chat online, or cook.",
+                        aVi: "Tôi ở nhà, đọc sách, xem phim, tán gẫu trên mạng hoặc nấu ăn."
+                    },
+                    {
+                        q: "Which season do you like the best? Why?",
+                        qVi: "Bạn thích mùa nào nhất? Tại sao?",
+                        a: "Autumn. It's cool, the leaves turn beautiful colors, and it's great for walks and photos.",
+                        aVi: "Mùa thu. Trời mát mẻ, lá chuyển màu tuyệt đẹp và rất thích hợp để đi dạo, chụp ảnh."
+                    },
+                    {
+                        q: "Does the weather affect your daily activities?",
+                        qVi: "Thời tiết có ảnh hưởng đến hoạt động hàng ngày của bạn không?",
+                        a: "Yes, a lot. I cancel outdoor plans if it rains, but feel energetic when it's sunny.",
+                        aVi: "Có, rất nhiều. Tôi hủy kế hoạch ngoài trời nếu mưa, nhưng cảm thấy tràn đầy năng lượng khi trời nắng."
+                    },
+                    {
+                        q: "Would you prefer living in a hot or a cold country?",
+                        qVi: "Bạn thích sống ở nước nóng hay nước lạnh hơn?",
+                        a: "A cooler climate. Hot weather makes me uncomfortable, so a cool place is better for my health and mood.",
+                        aVi: "Vùng có khí hậu mát mẻ hơn. Trời nóng làm tôi khó chịu, nên nơi mát mẻ sẽ tốt hơn cho sức khỏe và tâm trạng."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 12",
+                topic: "Present",
+                topicVi: "Quà tặng",
+                icon: "🎁",
+                color: "#e11d48",
+                items: [
+                    {
+                        q: "Do you usually receive presents from others?",
+                        qVi: "Bạn có thường nhận quà từ người khác không?",
+                        a: "Yes, on special occasions like my birthday. I often receive books or clothes and feel very grateful.",
+                        aVi: "Có, vào các dịp đặc biệt như sinh nhật. Tôi thường nhận được sách hoặc quần áo và cảm thấy rất biết ơn."
+                    },
+                    {
+                        q: "On what occasions do you often give presents?",
+                        qVi: "Bạn thường tặng quà vào dịp nào?",
+                        a: "On birthdays, holidays (Christmas, Tet), or for good news (passing an exam). It shows we care.",
+                        aVi: "Vào dịp sinh nhật, lễ tết (Giáng sinh, Tết), hoặc khi có tin vui (thi đỗ). Nó cho thấy sự quan tâm của chúng ta."
+                    },
+                    {
+                        q: "What was the best present you have ever received?",
+                        qVi: "Món quà tốt nhất bạn từng nhận được là gì?",
+                        a: "A laptop from my parents when I passed the university entrance exam. I use it daily.",
+                        aVi: "Một chiếc laptop từ bố mẹ khi tôi đỗ đại học. Tôi dùng nó hàng ngày."
+                    },
+                    {
+                        q: "Do you prefer giving or receiving presents? Why?",
+                        qVi: "Bạn thích tặng quà hay nhận quà hơn? Tại sao?",
+                        a: "Giving presents. I love seeing the joy on someone's face and having fun choosing the gift.",
+                        aVi: "Tặng quà. Tôi thích nhìn thấy niềm vui trên gương mặt ai đó và rất vui khi chọn quà."
+                    },
+                    {
+                        q: "Do you think the price of a gift is important?",
+                        qVi: "Bạn có nghĩ giá cả của một món quà là quan trọng không?",
+                        a: "No, the thought and feeling matter most. A small, meaningful gift is better than an expensive one.",
+                        aVi: "Không, suy nghĩ và tình cảm mới là quan trọng nhất. Một món quà nhỏ bé nhưng ý nghĩa còn tốt hơn món quà đắt tiền."
+                    }
+                ]
+            },
+            {
+                name: "Chủ đề 13",
+                topic: "Communication",
+                topicVi: "Giao tiếp",
+                icon: "💬",
+                color: "#3b82f6",
+                items: [
+                    {
+                        q: "How often do you use your mobile phone?",
+                        qVi: "Bạn sử dụng điện thoại di động bao lâu một lần?",
+                        a: "Almost all the time to study, text, and check social media. I probably should spend less time on it.",
+                        aVi: "Gần như mọi lúc để học, nhắn tin và xem mạng xã hội. Có lẽ tôi nên dành ít thời gian hơn cho nó."
+                    },
+                    {
+                        q: "Do you prefer making calls or messaging when communicating with your friends?",
+                        qVi: "Bạn thích gọi điện hay nhắn tin khi liên lạc với bạn bè?",
+                        a: "I prefer messaging because it's quick and flexible. But I make calls for important things.",
+                        aVi: "Tôi thích nhắn tin hơn vì nó nhanh và linh hoạt. Nhưng tôi sẽ gọi điện cho những việc quan trọng."
+                    },
+                    {
+                        q: "Do you know any software or application which helps you communicate with your friends?",
+                        qVi: "Bạn có biết phần mềm hay ứng dụng nào giúp bạn liên lạc với bạn bè không?",
+                        a: "Yes, Messenger, Zalo, and Instagram. They are free and convenient for chatting and video calls.",
+                        aVi: "Có, Messenger, Zalo và Instagram. Chúng miễn phí và tiện lợi để nhắn tin và gọi video."
+                    },
+                    {
+                        q: "Do you think people communicate less face to face nowadays?",
+                        qVi: "Bạn có nghĩ mọi người ngày nay ít giao tiếp trực tiếp hơn không?",
+                        a: "Yes, many prefer texting/video calling for convenience. However, meeting in person is crucial for real connection.",
+                        aVi: "Có, nhiều người thích nhắn tin/gọi video cho tiện. Tuy nhiên, gặp mặt trực tiếp rất quan trọng để có sự kết nối thực sự."
+                    },
+                    {
+                        q: "Do you find it easy to talk to new people?",
+                        qVi: "Bạn có thấy dễ dàng khi nói chuyện với người mới không?",
+                        a: "It depends. It's easy with friendly people, but I feel a little shy meeting someone for the first time.",
+                        aVi: "Tùy tình huống. Sẽ dễ dàng với những người thân thiện, nhưng tôi hơi ngại khi gặp ai đó lần đầu."
+                    }
+                ]
+            }
+        ]
     }
 };
